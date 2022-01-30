@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/main.js" defer></script>
+</head>
+<body>
+    <header class="text-center mb-5">
+        <h2>Full-stack fejlesztő próbafeladat</h2>
+        <small>Weather API, alert, email, cron</small>
+    </header>
+    <main class="container">
+        <div class="text-center">
+            <h1>Hello <span class="text-food">Food</span><span class="text-panda">Panda</span>!</h1>
+            <div class="position-relative">
+                <picture>
+                    <source srcset="/img/panda.png">
+                    <source srcset="/img/panda.webp">
+                    <img src="/img/panda.webp" alt="Panda">
+                </picture>
+            </div>
+        </div>
+        
+        <nav class="navbar navbar-light bg-light">
+            <a class="nav-link" href="{{ path('index') }}">New Notice</a>
+            <a class="nav-link" href="{{ path('notices') }}">List of Submissed Notices</a>
+        </nav>
+        {% block main %}{% endblock %}
+    </main>
+    <footer class="text-center">
+        <p>Radován Barnabás</p>
+        <p>r.barnabas96@gmail.com</p>
+        <p>github repo</p>
+    </footer>
+</body>
+</html>

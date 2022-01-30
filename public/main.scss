@@ -1,0 +1,36 @@
+@import "node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+
+$panda-pink: #d70f64;
+$panda-blue: #5effb6;
+
+//sass --watch main.scss:main.css
+main {
+    border-top: 1px solid rgb(231, 231, 231);
+    padding: 1em;
+}
+ul {
+    li {
+        list-style: none;
+    }
+}
+.text-food {
+    color: $panda-pink;
+    background-color: $panda-blue;
+    padding: 0.1em;
+}
+.text-panda {
+    color: $panda-blue;
+    background-color: $panda-pink;
+    padding: 0.1em;
+}
+.btn-panda {
+    color: #fff;
+    background-color: $panda-pink;
+    border-color: $panda-pink;
+}
+footer {
+    padding: 1em;
+    color: #fff;
+    background-color: $panda-pink;
+}

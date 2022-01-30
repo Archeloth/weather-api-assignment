@@ -1,0 +1,31 @@
+{% extends 'layout.html.twig' %}
+
+{% block main %}
+    <p>Submit a new temperature notice!</p>
+
+    {{ form_start(form, {'attr': {'class': 'form-row', 'id': 'notice-form'}}) }}
+        <div class="col-md-4">
+            {{ form_label(form.email, 'Email Address') }}
+            {{ form_widget(form.email) }}
+            <small class="form-text text-danger">{{ form_errors(form.email) }}</small>
+        </div>
+
+        <div class="col-md-4">
+            {{ form_label(form.city, 'City') }}
+            {{ form_widget(form.city) }}
+            <small class="form-text text-danger">{{ form_errors(form.city) }}</small>
+        </div>
+
+        <div class="col-md-4">
+            {{ form_label(form.temp_limit, 'Temperature Limit (C°)') }}
+            {{ form_widget(form.temp_limit) }}
+            <small class="form-text text-danger">{{ form_errors(form.temp_limit) }}</small>
+        </div>
+
+        <div>
+            <input id="override" type="hidden" name="override" value="false">
+            <button id="save-btn" type="submit" class="form-control btn btn-panda">Save</button>
+        </div>
+        {{ form_end(form) }}
+        <p id="status"></p>
+{% endblock %}

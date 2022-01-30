@@ -1,0 +1,29 @@
+@import url(node_modules/bootstrap/dist/css/bootstrap.min.css);
+main {
+  border-top: 1px solid #e7e7e7;
+  padding: 1em; }
+
+ul li {
+  list-style: none; }
+
+.text-food {
+  color: #d70f64;
+  background-color: #5effb6;
+  padding: 0.1em; }
+
+.text-panda {
+  color: #5effb6;
+  background-color: #d70f64;
+  padding: 0.1em; }
+
+.btn-panda {
+  color: #fff;
+  background-color: #d70f64;
+  border-color: #d70f64; }
+
+footer {
+  padding: 1em;
+  color: #fff;
+  background-color: #d70f64; }
+
+/*# sourceMappingURL=main.css.map */

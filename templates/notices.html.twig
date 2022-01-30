@@ -1,0 +1,25 @@
+{% extends 'layout.html.twig' %}
+
+{% block main %}
+    <table class="table table-hover mt-3">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>City</th>
+                <th>Temperature Limit (C°)</th>
+                <th>Email Sent At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for notice in notices %}
+                <tr>
+                    <td>{{ notice.email }}</td>
+                    <td>{{ notice.city }}</td>
+                    <td>{{ notice.tempLimit }}</td>
+                    <td>{{ notice.emailSentAt ? notice.emailSentAt|date("Y. m. d. H:i") : '-' }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p class="my-3"><a href="https://openweathermap.org/">Openweathermap</a> API Last Update: #</p>
+{% endblock %}
