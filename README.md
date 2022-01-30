@@ -54,6 +54,11 @@ npm install
 - Open in the browser
 `localhost:8000`
 
+### Images of the app working
+![Image of the index interface](https://github.com/Archeloth/weather-api-assignment/blob/master/public/img/Screenshot_index.png)
+![Image of the notices interface](https://github.com/Archeloth/weather-api-assignment/blob/master/public/img/Screenshot_notices.png)
+![Image of the sent out Email](https://github.com/Archeloth/weather-api-assignment/blob/master/public/img/Screenshot_email.png)
+
 ### Things that needs more work, or I didn't have time for
 - [ ] Modal interface for user friendliness, instead of the current button clicking twice for data overwriting.
 - [ ] A real caching system (exp: PHP FileCache) for the API calls, to reduce traffic.
