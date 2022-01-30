@@ -66,6 +66,7 @@ class ApiController extends AbstractController
             return new JsonResponse([
                 'message' => 'Notice already exists'
             ], Response::HTTP_CONFLICT);
+            
         } catch (TypeError $e) {
             return new JsonResponse([
                 'message' => 'An input field is incorrect'
@@ -87,10 +88,6 @@ class ApiController extends AbstractController
     public function cron(ManagerRegistry $doctrine, MailerInterface $mailer): JsonResponse
     {
         $entityManager = $doctrine->getManager();
-
-        //API test
-        //https://symfony.com/doc/current/doctrine.html#installing-doctrine
-        //php bin/console doctrine:query:sql "SELECT * FROM notice"
         
         $notices = $doctrine->getRepository(Notice::class)->findAll();
         $counter = 0;
@@ -107,13 +104,13 @@ class ApiController extends AbstractController
         $now = new \DateTime();
         foreach ($notices as $notice) {
             if($cache[$notice->getCity()] >= $notice->getTempLimit() && ($notice->getEmailSentAt() == null || $notice->getEmailSentAt() < $now->modify("-1 day"))) {
-                /*
+                
                 $email = (new Email())
                     ->from('quietheroine@gmail.com')
                     ->to($notice->getEmail())
                     ->subject('Test assignment - Weather Notice')
-                    ->html('<h1>Weather Notice!</h1><p>The temperature limit you set for the city "<b>'.$notice->getCity().'</b>" reached "<b>'.$notice->getTempLimit().'</b>" C°! Currently its "<b>'.$temperature.'</b>" C°.</p>');
-                $mailer->send($email);*/
+                    ->html('<h1>Weather Notice!</h1><p>The temperature limit you set for the city "<b>'.$notice->getCity().'</b>" reached "<b>'.$notice->getTempLimit().'</b>" C°! Currently its "<b>'.$cache[$notice->getCity()].'</b>" C°.</p>');
+                $mailer->send($email);
 
                 $notice->setEmailSentAt($now);
                 $entityManager->persist($notice);
