@@ -54,6 +54,9 @@ npm install
 - Open in the browser
 `http://127.0.0.1:8000/`
 
+- Alternatively, to bypass the hourly cron and run the email service right away, access: 
+`/api/cron`
+
 ### Images of the app working
 ![Image of the index interface](https://github.com/Archeloth/weather-api-assignment/blob/master/public/img/Screenshot_index.png)
 ![Image of the notices interface](https://github.com/Archeloth/weather-api-assignment/blob/master/public/img/Screenshot_notices.png)
@@ -63,4 +66,5 @@ npm install
 - [ ] Modal interface for user friendliness, instead of the current button clicking twice for data overwriting.
 - [ ] A real caching system (exp: PHP FileCache) for the API calls, to reduce traffic.
 - [ ] The 1 mail / 24h limit. Currently every Alert stored lives individually, and the 24h limit applies onto to themselves, not across linked email addresses.
+- [ ] Proper CRUD functionality of the Alerts.
 - [ ] Unit and other tests.
