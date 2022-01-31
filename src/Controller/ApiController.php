@@ -74,7 +74,8 @@ class ApiController extends AbstractController
             
         } catch (\Exception $e) {
             return new JsonResponse([
-                'message' => 'The server ran into an issue'
+                'message' => 'The server ran into an issue',
+                'error' => $e->getMessage()
             ], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
     }
