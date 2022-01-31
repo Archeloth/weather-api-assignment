@@ -52,7 +52,7 @@ npm install
 `symfony serve`
 
 - Open in the browser
-`localhost:8000`
+`http://127.0.0.1:8000/`
 
 ### Images of the app working
 ![Image of the index interface](https://github.com/Archeloth/weather-api-assignment/blob/master/public/img/Screenshot_index.png)
@@ -63,3 +63,4 @@ npm install
 - [ ] Modal interface for user friendliness, instead of the current button clicking twice for data overwriting.
 - [ ] A real caching system (exp: PHP FileCache) for the API calls, to reduce traffic.
 - [ ] The 1 mail / 24h limit. Currently every Alert stored lives individually, and the 24h limit applies onto to themselves, not across linked email addresses.
+- [ ] Unit and other tests.

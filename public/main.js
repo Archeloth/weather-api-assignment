@@ -4,7 +4,7 @@ $('#notice-form').on('submit', (e) => {
     const formData = form.serialize();
     $.ajax({
         type: 'POST',
-        url: '/api/form',
+        url: '/index.php/api/form',
         data: formData,
         dataType: 'json',
         success: (response) => {
